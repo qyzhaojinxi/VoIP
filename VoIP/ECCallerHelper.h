@@ -28,6 +28,7 @@
 
 @property(nonatomic,strong)NSDictionary *calledInfo;
 @property(nonatomic,strong)NSDictionary *incomingInfo;
+@property(nonatomic,strong)NSString *chatId;
 
 -(void)setLoginDelegate:(id)mDelegate;
 -(void)setCallDelegate:(id)mDelegate;
@@ -51,5 +52,6 @@
 -(void)onCallAnswered:(NSString *)callid;
 
 -(void)onCallReleased:(NSString *)callid;
+- (void)onMakeCallFailed:(NSString *)callid withReason:(NSInteger)reason;
 
 @end

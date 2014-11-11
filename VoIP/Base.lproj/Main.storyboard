@@ -250,6 +250,19 @@
                                     <action selector="acceptButtonPressed:" destination="j2L-6I-dse" eventType="touchUpInside" id="lZS-N3-buY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uD7-QF-RPt">
+                                <rect key="frame" x="151" y="441" width="298" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="ULB-Uy-T4J"/>
+                                    <constraint firstAttribute="height" constant="48" id="pSO-sY-5pU"/>
+                                </constraints>
+                                <state key="normal" title="挂断">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rejectButtonPressed:" destination="j2L-6I-dse" eventType="touchUpInside" id="UwF-St-mas"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -257,7 +270,9 @@
                             <constraint firstItem="X2Q-jH-sHY" firstAttribute="bottom" secondItem="rO9-pY-5fk" secondAttribute="bottomMargin" id="J0S-WY-YCD"/>
                             <constraint firstAttribute="centerX" secondItem="pQU-IL-rbq" secondAttribute="centerX" id="KLz-8N-ugP"/>
                             <constraint firstItem="19h-XD-bbp" firstAttribute="top" secondItem="pQU-IL-rbq" secondAttribute="bottom" constant="264" id="Myj-fc-a3e"/>
+                            <constraint firstItem="cs7-qN-q8m" firstAttribute="top" secondItem="uD7-QF-RPt" secondAttribute="bottom" constant="111" id="RyF-4b-sdx"/>
                             <constraint firstItem="X2Q-jH-sHY" firstAttribute="top" secondItem="rO9-pY-5fk" secondAttribute="topMargin" id="WJs-X7-ygY"/>
+                            <constraint firstAttribute="centerX" secondItem="uD7-QF-RPt" secondAttribute="centerX" id="ccr-H4-7mR"/>
                             <constraint firstItem="FeT-qN-3NP" firstAttribute="top" secondItem="pQU-IL-rbq" secondAttribute="bottom" constant="264" id="hMk-kV-08R"/>
                             <constraint firstAttribute="centerX" secondItem="X2Q-jH-sHY" secondAttribute="centerX" constant="-2" id="hOT-PE-gPZ"/>
                             <constraint firstItem="19h-XD-bbp" firstAttribute="leading" secondItem="X2Q-jH-sHY" secondAttribute="trailing" constant="72" id="ma2-mq-pa4"/>
@@ -265,7 +280,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accetpButton" destination="19h-XD-bbp" id="bfd-j0-I5X"/>
                         <outlet property="incomeNum" destination="pQU-IL-rbq" id="iif-Fg-gty"/>
+                        <outlet property="rejectButton" destination="FeT-qN-3NP" id="qbm-9V-0gm"/>
+                        <outlet property="releaseButton" destination="uD7-QF-RPt" id="ogi-Ng-oNw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7V-Io-1hq" userLabel="First Responder" sceneMemberID="firstResponder"/>

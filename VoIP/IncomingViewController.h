@@ -8,13 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "ECCallerHelper.h"
+
+typedef enum : NSUInteger {
+    ECCallin,
+    ECCallout,
+  
+} ECCallInOrOut;
+
 @interface IncomingViewController : UIViewController<ECCallHelperDelegate>
 
 {
 
     ECCallerHelper *callHelper;
 }
-
+@property (weak, nonatomic) IBOutlet UIButton *rejectButton;
+@property (weak, nonatomic) IBOutlet UIButton *accetpButton;
+@property(assign,nonatomic)ECCallInOrOut ECCallType;
+@property (weak, nonatomic) IBOutlet UIButton *releaseButton;
 @property (weak, nonatomic) IBOutlet UILabel *incomeNum;
 - (IBAction)acceptButtonPressed:(UIButton *)sender;
 - (IBAction)rejectButtonPressed:(UIButton *)sender;

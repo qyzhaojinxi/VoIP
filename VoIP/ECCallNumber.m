@@ -53,8 +53,19 @@
 
 - (IBAction)beginCall:(UIButton *)sender {
     
+    IncomingViewController *incom=[self.storyboard instantiateViewControllerWithIdentifier:@"IncomingViewController"];
+    incom.ECCallType=ECCallout;
     
-    [[[ECCallerHelper shareHelper] callService]makeCallWithType:0 andCalled:_calledNumber.text];
+    
+    
+    [self presentViewController:incom animated:YES completion:^{
+        
+        
+        
+      
+        
+    }];
+
     
     
 }
@@ -77,6 +88,9 @@
         
         
         
+        
+      
+        
        callHelper.calledInfo =[subInfos objectAtIndex:buttonIndex];
         
         
@@ -90,13 +104,34 @@
 -(void)onIncomingCallReceived:(NSString *)callid withCallerAccount:(NSString *)caller withCallerPhone:(NSString *)callerphone withCallerName:(NSString *)callername withCallType:(NSInteger)calltype
 {
 
+   
+    
     
     ECCallerHelper *callHelper=[ECCallerHelper shareHelper];
     callHelper.incomingInfo=@{@"callid":callid,@"caller":caller};
 
+    callHelper.chatId=callid;
     IncomingViewController *incom=[self.storyboard instantiateViewControllerWithIdentifier:@"IncomingViewController"];
+    incom.ECCallType=ECCallin;
+    [self presentViewController:incom animated:YES completion:^{
     
-    [self presentViewController:incom animated:YES completion:nil];
+    
+    
+        UILocalNotification *local=[[UILocalNotification alloc]init];
+        
+        local .soundName = @"beep-beep.caf";//UILocalNotificationDefaultSoundName;
+        
+        local.alertBody=[NSString stringWithFormat:@"来电话了：%@",caller];
+        
+        local.applicationIconBadgeNumber=1;
+        
+        
+        [[UIApplication sharedApplication]presentLocalNotificationNow:local];
+        
+//         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+
+    
+    }];
 
 
 }

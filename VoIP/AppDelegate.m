@@ -26,8 +26,38 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    
+    BOOL backgroundAccepted = [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:^{ [self backgroundHandler]; }];
+    if (backgroundAccepted)
+    {
+        NSLog(@"backgrounding accepted");
+    }
+    
+    [self backgroundHandler];
+
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+}
+- (void)backgroundHandler {
+    
+    NSLog(@"### -->backgrounding handler");
+    
+    UIApplication*    app = [UIApplication sharedApplication];
+    
+    backgroundTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        [app endBackgroundTask:backgroundTask];
+        backgroundTask = UIBackgroundTaskInvalid;
+    }];
+    
+    // Start the long-running task
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        
+        
+        
+        
+    });
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

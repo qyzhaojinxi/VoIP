@@ -126,5 +126,18 @@ static ECCallerHelper *instance;
 
 
 }
+- (void)onMakeCallFailed:(NSString *)callid withReason:(NSInteger)reason
+{
 
+       
+    if (incomingDelegate&&[incomingDelegate respondsToSelector:@selector(onMakeCallFailed:withReason:)]) {
+        
+        
+        [incomingDelegate onMakeCallFailed:callid withReason:reason];
+        
+        
+    }
+
+
+}
 @end
