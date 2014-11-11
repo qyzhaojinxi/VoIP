@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCPCallEvent.h"
+#import "CCPCallService.h"
+#import "ECCallerHelper.h"
+@interface ViewController : UIViewController<UIActionSheetDelegate,ECCallHelperDelegate>
+{
+    
+    NSMutableArray *subInfos;
+    
+    
+    NSDictionary *currentSubAccount;
+    
+}
 
-@interface ViewController : UIViewController
-
+- (IBAction)loginPressed:(UIButton *)sender;
+@property( nonatomic,strong)NSDictionary *accountInfo;
+- (IBAction)pickAccount:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *accountLbl;
+@property (weak, nonatomic) IBOutlet UILabel *pwdLbl;
 
 @end
 

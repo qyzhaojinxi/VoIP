@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>main_account</key>
+	<string>SID：aaf98f89495b3f3801495fad312302aa</string>
+	<key>main_token</key>
+	<string>6f8b0e25b6e843c38d72229b6c00a0e6</string>
+	<key>app_id</key>
+	<string>8a48b551495b42ea01495fb064fc02cc</string>
+	<key>serverip</key>
+	<string>sandboxapp.cloopen.com</string>
+	<key>serverport</key>
+	<string>8883</string>
+	<key>subaccounts_info</key>
+	<array>
+		<dict>
+			<key>sub_account</key>
+			<string>8a48b551495b42ea01495fb0654a02cf</string>
+			<key>sub_token</key>
+			<string>6b322385ce524819b974ce3339cf14cb</string>
+			<key>voip_account</key>
+			<string>83115500000003</string>
+			<key>voip_password</key>
+			<string>a3v9ckzm</string>
+		</dict>
+		<dict>
+			<key>sub_account</key>
+			<string>8a48b551495b42ea01495fb0656002d0</string>
+			<key>sub_token</key>
+			<string>fd2fa1cd4aa04387b8ba9f00446ac048</string>
+			<key>voip_account</key>
+			<string>83115500000004</string>
+			<key>voip_password</key>
+			<string>33lzen0m</string>
+		</dict>
+	</array>
+</dict>
+</plist>
